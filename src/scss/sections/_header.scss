@@ -2,6 +2,7 @@
 .header {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 75px;
 
 	&__content {
 		animation: background infinite ease-out 10s;

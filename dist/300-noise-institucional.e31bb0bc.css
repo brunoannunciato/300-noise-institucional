@@ -410,17 +410,34 @@ body {
 
 .section-title {
   font-size: 24px;
+  font-family: "Consolas";
   line-height: 28px;
   font-weight: bold;
+  position: relative;
+}
+.section-title::before {
+  position: absolute;
+  left: -65px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .consolas {
   font-family: "Consolas";
 }
 
+.green {
+  color: #00FF99;
+}
+
+.grey {
+  color: #3D3D3D;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 75px;
 }
 .header__content {
   animation: background infinite ease-out 10s;
@@ -489,6 +506,48 @@ body {
     bottom: -55px;
     left: -130px;
   }
+}
+
+.info {
+  display: flex;
+}
+.info__card {
+  width: 50%;
+  padding: 108px 90px 96px;
+}
+.info__card .section-title {
+  margin-left: 90px;
+}
+.info__card .text {
+  padding-left: 90px;
+}
+
+.is-green {
+  background-color: #00FF99;
+}
+.is-green .section-title::before {
+  content: url("/ico-title-01.399d48c3.png");
+}
+
+.is-grey {
+  background-color: #3D3D3D;
+  position: relative;
+}
+.is-grey::after, .is-grey::before {
+  position: absolute;
+  left: 0%;
+  transform: translateX(-50%);
+}
+.is-grey::after {
+  content: url("/divider-02.4320361f.png");
+  bottom: -63px;
+}
+.is-grey::before {
+  content: url("/divider-01.96301156.png");
+  top: -49px;
+}
+.is-grey .section-title::before {
+  content: url("/ico-title-02.ae1f60d2.png");
 }
 
 /*# sourceMappingURL=/300-noise-institucional.e31bb0bc.css.map */
