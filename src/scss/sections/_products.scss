@@ -1,0 +1,74 @@
+.products {
+	animation: background-03 infinite ease 6s;
+	background-image: url('./images/background-03.png');
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: space-between;
+	padding: 80px 20px 80px 90px;
+	position: relative;
+
+	@keyframes background-03 {
+		0% { background-position: 105% 105%; }
+		50% { background-position: 100% 100%; }
+		100% { background-position: 105% 105%; }
+	}
+
+	&::after {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		content: url('./images/divider-03.png');
+		bottom: -43px;
+	}
+
+	&__content {
+		width: 50%;
+		padding-right: 90px;
+	}
+
+	&__cards {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: 50%;
+
+		&::after {
+			content: '';
+			display: block;
+			height: 130px;
+			margin: 12px;
+			width: 190px;
+		}
+	}
+
+	&__card {
+		align-items: center;
+		background: #F2FDF9;
+		border-radius: 5px;
+		flex-direction: column;
+		display: flex;
+		justify-content: center;
+		height: 130px;
+		margin: 12px;
+		width: 190px;
+	}
+
+	&__card-text {
+		color: #3D3D3D;
+		font-size: 14px;
+		font-weight: bold;
+		line-height: 16px;
+		text-align: center;
+	}
+
+	.section-title {
+		margin-left: 90px;
+		&::before {
+			content: url('./images/ico-title-03.png');
+		}
+	}
+
+	.text {
+		padding-left: 90px;
+	}
+}
