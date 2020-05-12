@@ -629,4 +629,105 @@ body {
   padding-left: 90px;
 }
 
+.gallery {
+  background-color: #1E1E1E;
+  padding: 103px 90px;
+}
+.gallery__header {
+  display: flex;
+  justify-content: space-between;
+}
+.gallery .section-title {
+  margin-left: 70px;
+}
+.gallery .section-title::before {
+  content: url("/ico-title-02.ae1f60d2.png");
+}
+.gallery__button {
+  background: #000000;
+  border-radius: 50px;
+  border: none;
+  color: #00FF99;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  height: 44px;
+  margin: 0 12px;
+  transition: color 0.6s, background-color 0.6s ease;
+  width: 184px;
+}
+.gallery__button.is-actived {
+  background-color: #00FF99;
+  color: #000000;
+}
+.gallery__button:focus {
+  border: 1px solid #00FF99;
+  outline: none;
+}
+
+.publi {
+  margin-top: 56px;
+}
+.publi__cards {
+  display: flex;
+  justify-content: space-between;
+}
+.publi__card {
+  background: #FFFFFF;
+  border-radius: 5px;
+  height: 270px;
+  width: 300px;
+  overflow: hidden;
+}
+.publi__image-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 174px;
+  width: 100%;
+  overflow: hidden;
+}
+.publi__image-wrapper a {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.publi__image-wrapper img {
+  height: auto;
+  width: 200%;
+}
+.publi__card-title {
+  color: #3d3d3d;
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 24px 24px 0 24px;
+  width: 100%;
+  text-decoration: none;
+}
+.publi__card-author {
+  color: rgba(61, 61, 61, 0.7);
+  font-size: 12px;
+  padding: 24px 24px 0 24px;
+  text-decoration: none;
+}
+.publi__button {
+  align-items: center;
+  background: #00FF99;
+  border-radius: 5px;
+  color: #140D4F;
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+  font-size: 16px;
+  height: 44px;
+  margin: 62px auto 0;
+  text-decoration: none;
+  transition: transform 0.4s ease-out;
+  width: 216px;
+}
+.publi__button:hover {
+  transform: scale(1.1);
+}
+
 /*# sourceMappingURL=/style.97fcb138.css.map */
