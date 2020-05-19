@@ -348,6 +348,7 @@ body {
   font-size: 16px;
   height: 100vh;
   padding: 0;
+  position: relative;
   margin: 0;
   width: 100vw;
 }
@@ -421,6 +422,19 @@ body {
   left: -65px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.overlay {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.overlay.is-actived {
+  display: block;
 }
 
 .text {
@@ -643,6 +657,12 @@ body {
 .gallery .section-title::before {
   content: url("/ico-title-02.ae1f60d2.png");
 }
+.gallery__section {
+  display: none;
+}
+.gallery__section.is-actived {
+  display: block;
+}
 .gallery__button {
   background: #000000;
   border-radius: 50px;
@@ -728,6 +748,86 @@ body {
 }
 .publi__button:hover {
   transform: scale(1.1);
+}
+
+.events {
+  margin-top: 50px;
+}
+.events__cards {
+  display: flex;
+  justify-content: space-between;
+}
+.events__card {
+  cursor: pointer;
+  height: 380px;
+  margin: 0;
+  position: relative;
+  width: 405px;
+}
+.events__card-image {
+  width: 100%;
+  height: auto;
+}
+.events__card-title {
+  color: #FFFFFF;
+  font-family: Consolas;
+  font-weight: bold;
+  font-size: 24px;
+  left: 0%;
+  line-height: 28px;
+  position: absolute;
+  text-align: center;
+  transform: translate(0, -50%);
+  top: 50%;
+  width: 100%;
+}
+
+.modal {
+  background-color: #ffffff;
+  box-shadow: #000000;
+  display: none;
+  height: 540px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 840px;
+  z-index: 2;
+}
+.modal.is-actived {
+  display: flex;
+}
+.modal__image {
+  width: 398px;
+}
+.modal__content {
+  flex-grow: 1;
+  padding: 32px;
+}
+.modal__title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+}
+.modal__text {
+  font-size: 16px;
+  line-height: 22px;
+  color: #3D3D3D;
+}
+.modal__close {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  z-index: 3;
+  width: 50px;
+  height: 50px;
+}
+.modal__close svg, .modal__close line {
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=/style.97fcb138.css.map */

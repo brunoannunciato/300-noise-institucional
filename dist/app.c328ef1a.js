@@ -118,6 +118,75 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"app.js":[function(require,module,exports) {
+var gallery = {
+  buttons: document.querySelectorAll('.gallery__button'),
+  sections: document.querySelectorAll('.gallery__section'),
+  handleSector: function handleSector() {
+    var _this = this;
+
+    this.buttons.forEach(function (button) {
+      button.addEventListener("click", function (event) {
+        var selectedbutton = event.target;
+        gallery.buttons.forEach(function (button) {
+          return button.classList.remove('is-actived');
+        });
+        selectedbutton.classList.add('is-actived');
+
+        _this.sections.forEach(function (section) {
+          section.classList.remove('is-actived');
+
+          if (section.getAttribute('data-section') === selectedbutton.getAttribute('data-button')) {
+            section.classList.add('is-actived');
+          }
+        });
+      });
+    });
+  },
+  setup: function setup() {
+    this.handleSector();
+  }
+};
+var events = {
+  buttons: document.querySelectorAll('.events__card'),
+  modals: document.querySelectorAll('.modal'),
+  showOverlay: function showOverlay() {
+    document.querySelector('.overlay').classList.add('is-actived');
+  },
+  hideOverlay: function hideOverlay() {
+    document.querySelector('.overlay').classList.remove('is-actived');
+  },
+  closeModals: function closeModals() {
+    var close = document.querySelectorAll('.modal__close');
+    close.forEach(function (button) {
+      button.addEventListener('click', function (event) {
+        event.target.parentNode.classList.remove('is-actived');
+        events.hideOverlay();
+      });
+    });
+  },
+  handleSector: function handleSector() {
+    var _this2 = this;
+
+    this.buttons.forEach(function (button) {
+      button.addEventListener("click", function (event) {
+        var selectedbutton = event.target;
+
+        _this2.modals.forEach(function (modal) {
+          modal.classList.remove('is-actived');
+
+          if (modal.getAttribute('event-modal') === selectedbutton.parentNode.getAttribute('event-button')) {
+            events.showOverlay();
+            modal.classList.add('is-actived');
+          }
+        });
+      });
+    });
+  },
+  setup: function setup() {
+    this.closeModals();
+    this.handleSector();
+  }
+};
 var medium = {
   data: {},
   fetchData: function fetchData() {
@@ -131,14 +200,15 @@ var medium = {
   },
   mountCard: function mountCard(data) {
     var html = "\n\t\t\t<div class=\"publi__card\">\n\t\t\t\t<div class=\"publi__image-wrapper\">\n\t\t\t\t\t<a href=\"".concat(data.link, "\" target=\"_blank\">\t\n\t\t\t\t\t\t<img src=\"").concat(data.thumbnail, "\" alt=\"").concat(data.title, "\">\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\n\t\t\t\t<a href=\"").concat(data.link, "\" target=\"_blank\" class=\"publi__card-title\">\n\t\t\t\t\t").concat(data.title, "\n\t\t\t\t</a>\n\n\t\t\t\t<a href=\"").concat(data.link, "\" target=\"_blank\" class=\"publi__card-author\">\n\t\t\t\t\tPor ").concat(data.author, "\n\t\t\t\t</a>\n\t\t\t</div>\n\t\t");
-    console.log(document.querySelector('.publi__cards'));
     document.querySelector('.publi__cards').insertAdjacentHTML('beforeend', html);
   },
   setup: function setup() {
     this.fetchData();
   }
 };
+gallery.setup();
 medium.setup();
+events.setup();
 },{}],"../../.nvm/versions/node/v12.16.3/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -167,7 +237,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51232" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55242" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,3 +1,70 @@
+const gallery = {
+	buttons: document.querySelectorAll('.gallery__button'),
+	sections: document.querySelectorAll('.gallery__section'),
+	handleSector: function() {
+		this.buttons.forEach(button => {
+			
+			button.addEventListener("click", event => {
+				const selectedbutton = event.target
+
+				gallery.buttons.forEach(button => button.classList.remove('is-actived'))
+
+				selectedbutton.classList.add('is-actived')
+
+				this.sections.forEach(section => {
+					section.classList.remove('is-actived')
+					
+					if (section.getAttribute('data-section') === selectedbutton.getAttribute('data-button')) {
+						section.classList.add('is-actived')
+					}
+				})
+			})
+		})
+	},
+	setup: function() {
+		this.handleSector()
+	}
+}
+
+const events = {
+	buttons: document.querySelectorAll('.events__card'),
+	modals: document.querySelectorAll('.modal'),
+	showOverlay: function() {
+		document.querySelector('.overlay').classList.add('is-actived')
+	},
+	hideOverlay: function() {
+		document.querySelector('.overlay').classList.remove('is-actived')
+	},
+	closeModals: function () {
+		const close = document.querySelectorAll('.modal__close')
+
+		close.forEach(button => {
+			button.addEventListener('click', event => {
+				event.target.parentNode.classList.remove('is-actived')
+				events.hideOverlay()
+			})
+		})
+	},
+	handleSector: function() {
+		this.buttons.forEach(button => {
+			button.addEventListener("click", event => {
+				const selectedbutton = event.target
+				this.modals.forEach(modal => {
+					modal.classList.remove('is-actived')
+					if (modal.getAttribute('event-modal') === selectedbutton.parentNode.getAttribute('event-button')) {
+						events.showOverlay()
+						modal.classList.add('is-actived')
+					}
+				})
+			})
+		})
+	},
+	setup: function() {
+		this.closeModals()
+		this.handleSector()
+	}
+}
+
 const medium = {
 	data: {},
 	fetchData: function() {
@@ -28,7 +95,6 @@ const medium = {
 			</div>
 		`
 
-		console.log(document.querySelector('.publi__cards'))
 		document.querySelector('.publi__cards').insertAdjacentHTML('beforeend', html);
 	},
 	setup: function() {
@@ -36,4 +102,6 @@ const medium = {
 	}
 }
 
+gallery.setup()
 medium.setup()
+events.setup()
