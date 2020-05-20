@@ -91,8 +91,12 @@
 		}
 
 		&::before {
-			content: '';
-			background-image: url('./images/ico-title-03.png');
+			content: url('./images/ico-title-03.png');
+			
+			@media (max-width: 920px) {
+				background-image: url('./images/ico-title-03.png');
+				content: '';
+			}
 		}
 	}
 

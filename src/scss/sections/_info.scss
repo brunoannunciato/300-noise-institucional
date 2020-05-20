@@ -37,8 +37,12 @@
 
 	.section-title {
 		&::before {
-			content: '';
-			background-image: url('./images/ico-title-01.png');
+			content: url('./images/ico-title-01.png');
+			
+			@media (max-width: 920px) {
+				background-image: url('./images/ico-title-01.png');
+				content: '';
+			}
 		}
 	}
 }
@@ -71,8 +75,12 @@
 
 	.section-title {
 		&::before {
-			background-image: url('./images/ico-title-02.png');
-			content: '';
+			content: url('./images/ico-title-02.png');
+			
+			@media (max-width: 920px) {
+				background-image: url('./images/ico-title-02.png');
+				content: '';
+			}
 		}
 	}
 }
