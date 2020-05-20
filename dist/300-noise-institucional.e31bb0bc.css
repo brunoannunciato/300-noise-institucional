@@ -750,6 +750,10 @@ body {
   transform: scale(1.1);
 }
 
+.podcasts {
+  margin-top: 56px;
+}
+
 .events {
   margin-top: 50px;
 }
