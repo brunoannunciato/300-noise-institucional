@@ -1,0 +1,101 @@
+.contact {
+	display: flex;
+
+	&__content {
+		background-color: #140d4f;
+		padding: 90px 180px 90px 90px;
+	}
+
+	&__social {
+		display: flex;
+		margin: 65px 70px 150px;
+	}
+
+	&__icon {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		border: 1.5px solid $green;
+		border-radius: 100%;
+		height: 50px;
+		margin-right: 14px;
+		width: 44px;
+		transition: transform .3s ease-out;
+		
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.2);
+		}
+		
+		span {
+			color: $green;
+			font-size: 1.2em;
+		}
+	}
+
+	&__form-wrapper {
+		background-color: $green;
+		background-image: url('./images/background-04.png');
+		min-width: 600px;
+		padding-top: 80px;
+	}
+
+	&__form {
+		background-color: #ffffff;
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		padding: 32px;
+		max-width: 405px;
+		transform: translateX(-100px);
+	}
+
+	&__input {
+		border: 1px solid #D1D1D1;
+		border-radius: 2px;
+		color: #A5A5A5;
+		font-size: 14px;
+		margin-bottom: 16px;
+		padding: 10px 15px;
+	}
+
+	&__textarea {
+		border: 1px solid #D1D1D1;
+		border-radius: 2px;
+		color: #A5A5A5;
+		font-size: 14px;
+		padding: 10px 15px;
+		height: 200px;
+		margin-bottom: 16px;
+		resize: none;
+	}
+
+	&__submit {
+		background: linear-gradient(263.06deg, #00FF99 2.17%, #93FFF8 108.08%);
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		font-size: 16px;
+		text-align: center;
+		color: #140D4F;
+		padding: 14px;
+		transition: transform .3s ease;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	.section-title {
+		margin-left: 70px;
+
+		&::before {
+			content: url('./images/ico-title-04.png');
+		}
+	}
+
+	.text {
+		margin-left: 70px;
+	}
+}

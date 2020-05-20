@@ -107,6 +107,34 @@ const medium = {
 	}
 }
 
-gallery.setup()
-medium.setup()
-events.setup()
+const contact = {
+	form: document.querySelector('.contact__form'),
+	button: document.querySelector('.contact__submit'),
+	formHandle: function() {
+		this.button.addEventListener('click', event => {
+			event.preventDefault()
+
+			let  data = new FormData(this.form);
+
+			fetch('https://formspree.io/mvowzdpk', {
+				method: 'post',
+				body: data,
+				headers: {
+					'Accept': 'application/json'
+				}
+			})
+			.then(res => res.json())
+			.then(data => console.log({data}))
+		})
+	},
+	setup: function() {
+		this.formHandle()
+	}
+}
+
+window.addEventListener("DOMContentLoaded", function() {
+	gallery.setup()
+	medium.setup()
+	events.setup()
+	contact.setup()
+})
