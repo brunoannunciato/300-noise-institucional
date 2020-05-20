@@ -23,6 +23,15 @@
 		left: -65px;
 		top: 50%;
 		transform: translateY(-50%);
+		
+		@media (max-width: 920px) {
+			background-size: 30px;
+			background-repeat: no-repeat;
+			background-position: right;
+			width: 30px;
+			height: 30px;
+			left: -45px;
+		}
 	}
 }
 
