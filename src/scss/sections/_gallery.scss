@@ -159,7 +159,27 @@
 }
 
 .podcasts {
-	margin-top: 56px;
+    margin-top: 56px;
+    
+    &__button {
+		align-items: center;
+		background: #00FF99;
+		border-radius: 5px;
+		color: #140D4F;
+		justify-content: center;
+		display: flex;
+		font-weight: bold;
+		font-size: 16px;
+		height: 44px;
+		margin: 62px auto 0;
+		text-decoration: none;
+		transition: transform .4s ease-out;
+		width: 216px;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
 }
 
 .events {
