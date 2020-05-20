@@ -51,6 +51,10 @@
 		background-image: url('./images/background-04.png');
 		min-width: 600px;
 		padding-top: 80px;
+		
+		@media (max-width: 1439px) {
+			min-width: 550px;
+		}
 
 		@media (max-width: 920px) {
 			width: 100%;
