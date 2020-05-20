@@ -2,15 +2,34 @@
 	background-color: #1E1E1E;
 	padding: 103px 90px;
 
+	@media (max-width: 920px) {
+		padding: 50px 20px;
+	}
+
 	&__header {
 		display: flex;
 		justify-content: space-between;
+		
+		@media (max-width: 920px) {
+			flex-wrap: wrap;
+		}
 	}
 
 	.section-title {
 		margin-left: 70px;
 		&::before {
 			content: url('./images/ico-title-02.png');
+
+			@media (max-width: 920px) {
+				content: '';
+				background-image: url('./images/ico-title-02.png');
+			}
+		}
+	}
+
+	&__menu {
+		@media (max-width: 920px) {
+			text-align: center;
 		}
 	}
 
@@ -35,6 +54,10 @@
 		transition: color .6s, background-color .6s ease;
 		width: 184px;
 
+		@media (max-width: 920px) {
+			margin-bottom: 12px;
+		}
+
 		&.is-actived {
 			background-color: #00FF99;
 			color: #000000;
@@ -53,6 +76,11 @@
 	&__cards {
 		display: flex;
 		justify-content: space-between;
+
+		@media (max-width: 920px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 	}
 
 	&__card {
@@ -61,6 +89,10 @@
 		height: 270px;
 		width: 300px;
 		overflow: hidden;
+
+		@media (max-width: 920px) {
+			margin-bottom: 12px;
+		}
 	}
 
 	&__image-wrapper {
@@ -131,6 +163,11 @@
 	&__cards {
 		display: flex;
 		justify-content: space-between;
+
+		@media (max-width: 920px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 	}
 
 	&__card {
@@ -181,15 +218,29 @@
 	width: 840px;
 	z-index: 2;
 
+	@media (max-width: 920px) {
+		width: 80%;
+		height: 80%;
+		flex-direction: column;
+	}
+
 	&.is-actived { display: flex; }
 
 	&__image {
 		width: 398px;
+
+		@media (max-width: 920px) {
+			display: none;
+		}
 	}
 
 	&__content {
 		flex-grow: 1;
 		padding: 32px;
+
+		@media (max-width: 920px) {
+			padding-top: 0;
+		}
 	}
 
 	&__title {
