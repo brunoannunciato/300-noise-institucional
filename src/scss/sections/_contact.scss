@@ -43,11 +43,14 @@
 	&__form {
 		background-color: #ffffff;
 		border-radius: 5px;
-		display: flex;
-		flex-direction: column;
 		padding: 32px;
 		max-width: 405px;
 		transform: translateX(-100px);
+	}
+	
+	&__form-fields {
+		display: flex;
+		flex-direction: column;
 	}
 
 	&__input {
@@ -86,6 +89,10 @@
 			transform: scale(1.1);
 		}
 	}
+	
+	.is-required.is-invalid {
+		border: 2px solid #ff0000;
+	}
 
 	.section-title {
 		margin-left: 70px;
@@ -97,5 +104,9 @@
 
 	.text {
 		margin-left: 70px;
+
+		&.contact__feedback-text {
+			margin-left: 0;
+		}
 	}
 }

@@ -110,21 +110,47 @@ const medium = {
 const contact = {
 	form: document.querySelector('.contact__form'),
 	button: document.querySelector('.contact__submit'),
+	formValidate: function() {
+		const requiredFields = document.querySelectorAll('.is-required')
+		let hasError = 0
+
+		requiredFields.forEach(field => {
+			if (field.value.trim().length === 0) {
+				hasError++
+
+				field.classList.add('is-invalid')
+				return
+			}
+
+			field.classList.remove('is-invalid')
+		})
+		if (hasError > 0) return false
+
+		return true
+	},
 	formHandle: function() {
 		this.button.addEventListener('click', event => {
 			event.preventDefault()
 
-			let  data = new FormData(this.form);
+			if (this.formValidate() === true) {
+				let  data = new FormData(this.form);
+	
+				fetch('https://formspree.io/mvowzdpk', {
+					method: 'post',
+					body: data,
+					headers: {
+						'Accept': 'application/json'
+					}
+				})
+				.then(res => res.json())
+				.then(data => {
+					if (data.ok) {
+						document.querySelector('.contact__form-fields').classList.add('hide')
+						document.querySelector('.contact__feedback').classList.remove('hide')
+					}
+				})
+			}
 
-			fetch('https://formspree.io/mvowzdpk', {
-				method: 'post',
-				body: data,
-				headers: {
-					'Accept': 'application/json'
-				}
-			})
-			.then(res => res.json())
-			.then(data => console.log({data}))
 		})
 	},
 	setup: function() {
