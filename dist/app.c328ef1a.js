@@ -157,6 +157,10 @@ var events = {
   },
   closeModals: function closeModals() {
     var close = document.querySelectorAll('.modal__close');
+    document.querySelector('.overlay').addEventListener('click', function (event) {
+      document.querySelector('.modal.is-actived').classList.remove('is-actived');
+      event.target.classList.remove('is-actived');
+    });
     close.forEach(function (button) {
       button.addEventListener('click', function (event) {
         event.target.parentNode.classList.remove('is-actived');
@@ -237,7 +241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55242" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58835" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -38,6 +38,11 @@ const events = {
 	closeModals: function () {
 		const close = document.querySelectorAll('.modal__close')
 
+		document.querySelector('.overlay').addEventListener('click', event => {
+			document.querySelector('.modal.is-actived').classList.remove('is-actived')
+			event.target.classList.remove('is-actived')
+		})
+
 		close.forEach(button => {
 			button.addEventListener('click', event => {
 				event.target.parentNode.classList.remove('is-actived')
