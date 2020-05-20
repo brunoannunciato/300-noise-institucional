@@ -3,12 +3,22 @@
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 75px;
+	
+	@media (max-width: 920px) {
+		flex-wrap: wrap;
+	}
 
 	&__content {
 		animation: background infinite ease-out 10s;
 		background-image: url('./images/background-01.png');
 		background-repeat: no-repeat;
 		padding: 0 90px;
+
+		@media (max-width: 920px) {
+			padding: 0 20px;
+			width: 100%;
+			margin-bottom: 24px;
+		}
 
 		@keyframes background {
 			0% { background-position: -50px 100%; }
@@ -19,14 +29,29 @@
 
 	&__title {
 		margin-bottom: 70px;
+
+		@media (max-width: 920px) {
+			margin-bottom: -30px;
+		}
 	}
 
 	&__text {
 		font-size: 32px;
 		line-height: 37px;
+
+		@media (max-width: 920px) {
+			font-size: 24px;
+			line-height: 32px;
+		}
 	}
 
-	&__social { display: flex; }
+	&__social {
+		display: flex;
+
+		@media (max-width: 920px) {
+			justify-content: center;
+		}
+	}
 
 	&__icon {
 		align-items: center;
@@ -52,6 +77,10 @@
 	&__image-wrapper {
 		position: relative;
 
+		@media (max-width: 920px) {
+			width: 100%;
+		}
+
 		&::after {
 			content: url('./images/background-02.png');
 			animation: background-02 infinite 7s;
@@ -71,6 +100,12 @@
 					bottom: -55px;
 					left: -130px;
 				}
+			}
+		}
+
+		img {
+			@media (max-width: 920px) {
+				width: 100%;
 			}
 		}
 	}
