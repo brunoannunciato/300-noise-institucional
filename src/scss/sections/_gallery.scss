@@ -135,15 +135,22 @@
 
 	&__card {
 		cursor: pointer;
-		height: 380px;
+		height: 358px;
 		margin: 0;
 		position: relative;
 		width: 405px;
+		overflow: hidden;
 	}
 
 	&__card-image {
 		width: 100%;
 		height: auto;
+		transition: transform .3s, filter .3s ease;
+
+		&:hover {
+			transform: scale(1.1);
+			filter: contrast(0.6);
+		}
 	}
 
 	&__card-title {
@@ -154,6 +161,7 @@
 		left: 0%;
 		line-height: 28px;
 		position: absolute;
+		pointer-events: none;
 		text-align: center;
 		transform: translate(0, -50%);
 		top: 50%;

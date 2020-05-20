@@ -763,14 +763,20 @@ body {
 }
 .events__card {
   cursor: pointer;
-  height: 380px;
+  height: 358px;
   margin: 0;
   position: relative;
   width: 405px;
+  overflow: hidden;
 }
 .events__card-image {
   width: 100%;
   height: auto;
+  transition: transform 0.3s, filter 0.3s ease;
+}
+.events__card-image:hover {
+  transform: scale(1.1);
+  filter: contrast(0.6);
 }
 .events__card-title {
   color: #FFFFFF;
@@ -780,6 +786,7 @@ body {
   left: 0%;
   line-height: 28px;
   position: absolute;
+  pointer-events: none;
   text-align: center;
   transform: translate(0, -50%);
   top: 50%;
