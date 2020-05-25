@@ -5,8 +5,10 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	height: 100vh;
-    padding: 0;
-    position: relative;
+	padding: 0;
+	position: relative;
 	margin: 0;
 	width: 100vw;
 }
+
+body { overflow-x: hidden; }
