@@ -68,13 +68,16 @@
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  display: block;
   font-family: Consolas;
   font-weight: bolder;
   font-size: 16px;
   text-align: center;
+  line-height: 25px;
   color: #140D4F;
   padding: 10px;
   transition: .3s transform ease;
+  text-decoration: none;
   height: 44px;
 
   &:hover {

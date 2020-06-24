@@ -276,6 +276,13 @@
 			height: 350px;
 			transform: translateX(-45px);
 			margin-right: -45px;
+
+			@media (max-width: 920px) {
+				display: none;
+				transform: 0;
+				margin: -30px 0 20px -30px;
+				max-width: 100%;
+			}
 		}
 	}
 

@@ -158,9 +158,31 @@ const contact = {
 	}
 }
 
+const lead = {
+  submitButton: document.querySelector('.form-submit'),
+  emailField: document.querySelector('#mce-EMAIL'),
+  step01: document.querySelector('.lead__step.step-01'),
+  step02: document.querySelector('.lead__step.step-02'),
+  handleSteps: function() {
+    
+    this.submitButton.addEventListener('click', () => {
+      let email = this.emailField.value
+      console.log({email: document.querySelector('#mce-EMAIL').value})
+      if (email.length == 0) {  return console.log({length: email.length}) }
+      console.log('bateu')
+      lead.step01.classList.remove('is-actived')
+      lead.step02.classList.add('is-actived')
+    })
+  },
+  setup:function() {
+    this.handleSteps()
+  }
+}
+
 window.addEventListener("DOMContentLoaded", function() {
 	gallery.setup()
 	medium.setup()
 	events.setup()
 	contact.setup()
-})
+	lead.setup()
+}) 
